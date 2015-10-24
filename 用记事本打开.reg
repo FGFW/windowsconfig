@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\用记事本打开.reg]
+@="用记事本戳开Y(&3) ^_^"                         
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\用记事本打开.reg\command]
+@="notepad.exe %1"
+
