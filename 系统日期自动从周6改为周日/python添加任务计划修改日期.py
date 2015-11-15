@@ -14,9 +14,9 @@ import datetime
 #任务计划名称
 任务名="whosyourdaddy"
 开始时间="01:01:01"
-程序路径=sys.argv[0]+" "+"task"
+程序路径='\"'+sys.argv[0]+" "+"task\""
 #任务计划运行频率/sc weekly /mo 选项为weekly /mo 为1表示每周运行
-频率=1
+频率="1"
 
 def 我是开关():
     with open(sys.argv[0],"r+",encoding="utf-8") as f:
@@ -43,24 +43,27 @@ def 修改开关(标识位):
 状态=我是开关()
 
 def 创建任务():
-    命令串="schtasks /create /ru \"system\" /F /sc weekly /mo "+频率+" "+"/d"+" "+"sun"+" "+开始时间+" "+"/tn"+" "+程序路径
+    命令串="schtasks /create /ru \"system\" /F /sc weekly /mo "+频率+" "+"/d"+" "+"sun"+" "+"/st "+开始时间+" "+"/tn"+" "+任务名+" "+"/tr "+程序路径
+    print(命令串)
     os.system(命令串)
     print("已经执行创建任务计划!")
     
 def 修改日期():
     if 状态:
         today=datetime.datetime.now()+datetime.timedelta(1)
+        today=today.strftime("%Y/%m/%d")
+        os.system("date "+today)
         修改开关("--")
         print(today)
     else:
         today=datetime.datetime.now()-datetime.timedelta(1)
-        
+        today=today.strftime("%Y/%m/%d")
+        os.system("date "+today)
         修改开关("++")
         print(today)
-        
-修改日期()
+
 if len(sys.argv)>1 and sys.argv[1]=="task":
-    pass
+    修改日期()
     sys.exit(0)
 
 
@@ -70,4 +73,3 @@ except SyntaxError:
     pass
 创建任务()
 
-#pause=os.system("pause")
