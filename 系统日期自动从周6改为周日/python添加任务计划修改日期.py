@@ -1,6 +1,6 @@
 ##--##
 """
-自动修改系统日期跳过周日
+python自动修改系统日期跳过周日
 题目来源 http://www.bathome.net/thread-38000-1-1.html
 ~~玩玩中文变量名
 本文件首行必须是状态标志不能删除,状态为--表示执行任务计划调用本程序时日期减1
@@ -65,7 +65,6 @@ def 修改日期():
 if len(sys.argv)>1 and sys.argv[1]=="task":
     修改日期()
     sys.exit(0)
-
 
 try:
     input("回车创建任务")
