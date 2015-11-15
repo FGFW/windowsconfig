@@ -54,14 +54,17 @@ def 修改日期():
         today=today.strftime("%Y/%m/%d")
         os.system("date "+today)
         修改开关("--")
-        print(today)
+        os.system("sc config W32Time start= auto")
+        os.system("net start W32Time")
+        
     else:
         today=datetime.datetime.now()-datetime.timedelta(1)
         today=today.strftime("%Y/%m/%d")
         os.system("date "+today)
         修改开关("++")
-        print(today)
-
+        os.system("net stop W32Time")
+        os.system("sc config W32Time start= disable")
+    
 if len(sys.argv)>1 and sys.argv[1]=="task":
     修改日期()
     sys.exit(0)
@@ -71,4 +74,3 @@ try:
 except SyntaxError:
     pass
 创建任务()
-

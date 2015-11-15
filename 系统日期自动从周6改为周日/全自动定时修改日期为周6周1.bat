@@ -48,7 +48,7 @@ set /p ver=<%~dp0\ver.txt
 if %ver%==-- (datex -f yyyy/mm/dd -o -1|date
 	echo ++>%~dp0\ver.txt
 	net stop W32Time
-	sc config W32Time start= disable
+	sc config W32Time start= disabled
 
 )
 ::再次运行时，日期加1，恢复正常日期
