@@ -1,6 +1,8 @@
 
 ##### codegay 		2016年4月12日 12:14:41
 
+[文本github地址](https://github.com/FGFW/windowsconfig/tree/master/sublime%20text%203%20python%20build%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6 "文本github地址")
+
 ```
 {
     "shell_cmd": "Python \"$file\"",
@@ -22,5 +24,3 @@
 ```
 #### "encoding": "cp936" 可以解决中文输出显示的问题，但是print Unicode字符可能有问题。
 
-
-https://github.com/FGFW/windowsconfig/tree/master/sublime%20text%203%20python%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
