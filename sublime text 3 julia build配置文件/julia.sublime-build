@@ -1,0 +1,3 @@
+{
+	"shell_cmd": "C:\\Users\\%username%\\AppData\\Local\\Julia-0.4.3\\bin\\julia.exe \"$file\""
+}
